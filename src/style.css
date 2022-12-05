@@ -1,0 +1,71 @@
+body {
+  font-family: sans-serif;
+}
+
+.main-container {
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 800px;
+  height: 440px;
+  display: block;
+  margin: 0 auto;
+  font-family: "Courgette", cursive;
+  margin-top: 6rem;
+}
+
+.search {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 1rem;
+}
+
+.search-icon {
+  padding-right: 10px;
+}
+
+.header {
+  border: 1px solid rgb(169, 161, 161);
+  border-radius: 3px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  border: none;
+  outline: none;
+  width: 35rem;
+}
+
+.search-btn {
+  width: 6rem;
+  padding: none;
+}
+
+.section-1 {
+  margin-bottom: 2rem;
+}
+
+a:link {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+h1 {
+  margin-left: 2rem;
+}
+
+li {
+  list-style: none;
+}
+
+.each-card {
+  width: 108px;
+  height: 180px;
+}
+
+h6 {
+  text-align: center;
+}
