@@ -25,6 +25,7 @@ let getDate = (date) => {
 let timeSelector = document.querySelector("#current-time");
 let date = new Date();
 timeSelector.innerHTML = getDate(date);
+let iconElement = document.querySelector("#icon");
 
 function weatherResponse(response) {
   document.querySelector("#city").innerHTML = response.data.name;
@@ -39,6 +40,10 @@ function weatherResponse(response) {
   );
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
+  iconElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function search(event) {

@@ -39,6 +39,10 @@ input {
   width: 35rem;
 }
 
+input::first-letter {
+  text-overflow: capitalize;
+}
+
 .search-btn {
   width: 6rem;
   padding: none;
