@@ -6,7 +6,7 @@ body {
   border: 1px solid black;
   border-radius: 10px;
   width: 800px;
-  height: 440px;
+  height: 410px;
   display: block;
   margin: 0 auto;
   font-family: "Courgette", cursive;
@@ -68,6 +68,10 @@ li {
 .each-card {
   width: 108px;
   height: 180px;
+}
+
+h5 {
+  padding-top: 12px;
 }
 
 h6 {
