@@ -85,3 +85,38 @@ let convertToCelsuis = (event) => {
 
 let celsuisLink = document.querySelector("#celsuis-link");
 celsuisLink.addEventListener("click", convertToCelsuis);
+
+// displaying the weather forecast multiple times
+
+const displayForecast = () => {
+  const forecastElement = document.querySelector("#weather-forecast");
+
+  const forecastHTML = `<div class="row align-items-start">`;
+
+  days = ["Thursday", "Friday", "Saturday", "Sunday", "Monday", "Tuesday"];
+  days.array.forEach((element) => {
+    forecastHTML =
+      forecastHTML +
+      `
+      <div class="card each-card">
+        <h5>Tuesday</h5>
+        <img
+          src="https://ssl.gstatic.com/onebox/weather/48/rain_s_cloudy.png"
+          class="card-img-top"
+          alt="..."
+        />
+        <div>
+          <span class="sec-2-text-max">31°</span>
+          <span class="sec-2-text-min">24°</span>
+        </div>
+      </div>
+      
+  </div>
+</div>`;
+    forecastHTML = `</div>`;
+  });
+
+  forecastElement.innerHTML = forecastHTML;
+};
+
+displayForecast();
