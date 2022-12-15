@@ -70,13 +70,12 @@ li {
   height: 180px;
 }
 
-h5 {
-  padding-top: 12px;
-  color: rgb(170, 166, 166);
+.sec-2-text-max {
+  color: rgb(61, 59, 59);
 }
 
-p {
-  color: rgb(170, 166, 166);
+.sec-2-text-min {
+  opacity: 0.5;
 }
 
 h6 {
