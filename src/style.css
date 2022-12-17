@@ -5,8 +5,8 @@ body {
 .main-container {
   border: 1px solid black;
   border-radius: 10px;
-  width: 800px;
-  height: 410px;
+  width: 750px;
+  height: 450px;
   display: block;
   margin: 0 auto;
   font-family: "Courgette", cursive;
