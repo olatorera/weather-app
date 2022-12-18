@@ -6,7 +6,7 @@ body {
   border: 1px solid black;
   border-radius: 10px;
   width: 750px;
-  height: 450px;
+  height: 410px;
   display: block;
   margin: 0 auto;
   font-family: "Courgette", cursive;
@@ -36,6 +36,7 @@ body {
 input {
   border: none;
   outline: none;
+  padding-left: 40px;
   width: 35rem;
 }
 
@@ -49,7 +50,9 @@ input::first-letter {
 }
 
 .section-1 {
+  margin: 0 auto;
   margin-bottom: 2rem;
+  padding-left: 20px;
 }
 
 a:link {
@@ -65,9 +68,15 @@ li {
   list-style: none;
 }
 
+.section2 {
+  display: block;
+  margin: 0 auto;
+  padding-left: 35px;
+}
+
 .each-card {
   width: 108px;
-  height: 180px;
+  height: 160px;
 }
 
 .sec-2-text-max {
