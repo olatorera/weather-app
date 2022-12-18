@@ -17,6 +17,7 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  padding-left: 25px;
   margin: 1rem;
 }
 
@@ -36,7 +37,6 @@ body {
 input {
   border: none;
   outline: none;
-  padding-left: 40px;
   width: 35rem;
 }
 
