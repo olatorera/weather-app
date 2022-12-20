@@ -28,7 +28,8 @@ timeSelector.innerHTML = getDate(date);
 let iconElement = document.querySelector("#icon");
 
 function weatherResponse(response) {
-  document.querySelector("#city").innerHTML = response.data.name;
+  document.querySelector("#city").innerHTML = response.data.city;
+  console.log(response, "name");
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.temperature.current
   );
@@ -42,9 +43,9 @@ function weatherResponse(response) {
     response.data.condition.description;
   // iconElement.setAttribute(
   //   "src",
-  //   `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  //   `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/{response.data.condition.icon_url}`
   // );
-  // iconElement.setAttribute("alt", response.data.weather[0].description);
+  iconElement.setAttribute("alt", response.data.condition.icon);
 }
 
 function search(event) {
@@ -53,13 +54,11 @@ function search(event) {
   // let searchQuery = document.querySelector("#search-query");
   // cityElement.innerHTML = searchQuery.value;
   // Making an API call once i get the response it wil be displayed
-  // let apiKey = "7b903fce3e3e1cc78f5ab959d5b024a5";
 
   let apiKey = "3f4aa0abbcaff6a7e1ba0obe64d3691t";
   let city = document.querySelector("#search-query").value;
   console.log(city, "new");
   let unit = "metric";
-  // let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`;
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${unit}`;
   console.log(apiUrl, "me");
   axios.get(apiUrl).then(weatherResponse);
