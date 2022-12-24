@@ -124,10 +124,11 @@ const displayForecast = (coordinates) => {
   let forecastHTML = `<div class="row">`;
 
   // let days = ["Friday", "Saturday", "Sunday", "Monday", "Tuesday"];s
-  newForecast.forEach(function (newForecastDay) {
-    forecastHTML =
-      forecastHTML +
-      ` <div class="col">
+  newForecast.forEach(function (newForecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        ` <div class="col">
     <div class="card each-card">
       <h5>${formatForecastDate(newForecastDay.temperature.day)}</h5>
       <img
@@ -146,6 +147,7 @@ const displayForecast = (coordinates) => {
     </div>
   </div>
   `;
+    }
   });
 
   forecastElement.innerHTML = forecastHTML;
