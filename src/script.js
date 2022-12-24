@@ -27,9 +27,16 @@ let date = new Date();
 timeSelector.innerHTML = getDate(date);
 let iconElement = document.querySelector("#icon");
 
+const getForecast = (coordinates) => {
+  const getForecastKey = "3f4aa0abbcaff6a7e1ba0obe64d3691t";
+  const getForecastUnit = "metric";
+  const getForecastApi = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${getForecastKey}&units=${getForecastUnit}`;
+  console.log(getForecastApi, "metas");
+  axios.get(getForecastApi).then(displayForecast);
+};
+
 function weatherResponse(response) {
   document.querySelector("#city").innerHTML = response.data.city;
-  console.log(response, "name");
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.temperature.current
   );
@@ -39,13 +46,15 @@ function weatherResponse(response) {
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
-  document.querySelector("#description").innerHTML =
+  document.querySelector("#description").innerHToriML =
     response.data.condition.description;
   // iconElement.setAttribute(
   //   "src",
   //   `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/{response.data.condition.icon_url}`
   // );
   iconElement.setAttribute("alt", response.data.condition.icon);
+
+  getForecast(response.data.coordinates);
 }
 
 function search(event) {
@@ -57,7 +66,6 @@ function search(event) {
 
   let apiKey = "3f4aa0abbcaff6a7e1ba0obe64d3691t";
   let city = document.querySelector("#search-query").value;
-  console.log(city, "new");
   let unit = "metric";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${unit}`;
   console.log(apiUrl, "me");
@@ -91,7 +99,8 @@ celsuisLink.addEventListener("click", convertToCelsuis);
 
 // displaying the weather forecast multiple times
 
-const displayForecast = () => {
+const displayForecast = (coordinates) => {
+  console.log(coordinates.data.daily, "datares");
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
