@@ -99,27 +99,49 @@ celsuisLink.addEventListener("click", convertToCelsuis);
 
 // displaying the weather forecast multiple times
 
+const formatForecastDate = (daystamp) => {
+  let date = new Date(daystamp * 1000);
+  let day = date.getDate();
+
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  return days[day];
+};
+
 const displayForecast = (coordinates) => {
-  console.log(coordinates.data.daily, "datares");
+  let newForecast = coordinates.data.daily;
+
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
 
-  let days = ["Friday", "Saturday", "Sunday", "Monday", "Tuesday"];
-  days.forEach(function (day) {
+  // let days = ["Friday", "Saturday", "Sunday", "Monday", "Tuesday"];s
+  newForecast.forEach(function (newForecastDay) {
     forecastHTML =
       forecastHTML +
       ` <div class="col">
     <div class="card each-card">
-      <h5>${day}</h5>
+      <h5>${formatForecastDate(newForecastDay.temperature.day)}</h5>
       <img
         src="https://ssl.gstatic.com/onebox/weather/48/rain_s_cloudy.png"
         class="card-img-top"
         alt="..."
       />
       <div>
-        <span class="sec-2-text-max">31°</span>
-        <span class="sec-2-text-min">24°</span>
+        <span class="sec-2-text-max">${Math.round(
+          newForecastDay.temperature.maximum
+        )}°</span>
+        <span class="sec-2-text-min">${Math.round(
+          newForecastDay.temperature.minimum
+        )}°</span>
       </div>
     </div>
   </div>
