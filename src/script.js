@@ -48,10 +48,7 @@ function weatherResponse(response) {
   );
   document.querySelector("#description").innerHToriML =
     response.data.condition.description;
-  // iconElement.setAttribute(
-  //   "src",
-  //   `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/{response.data.condition.icon_url}`
-  // );
+
   iconElement.setAttribute("alt", response.data.condition.icon);
 
   getForecast(response.data.coordinates);
@@ -123,7 +120,6 @@ const displayForecast = (coordinates) => {
 
   let forecastHTML = `<div class="row">`;
 
-  // let days = ["Friday", "Saturday", "Sunday", "Monday", "Tuesday"];s
   newForecast.forEach(function (newForecastDay, index) {
     if (index < 5) {
       forecastHTML =
